@@ -41,13 +41,13 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-4 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                <a class="nav-link" aria-current="page" href="dashboard.html">Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="loprofile.html">List of Profiles</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="login.html">Logout</a>
+                <a class="nav-link" href="index.html">Logout</a>
               </li>
             </ul>
             <div class="form-check form-switch">
@@ -71,13 +71,13 @@
 <img src="img/uitm.png" alt="UiTM" width="200px" ?>
             </div>
             <div class="col-md-10">
-              <h3>HOMEPAGE</h3>
+              <h3>DASHBBOARD</h3>
               <h6>University Technology MARA</h6>
               <p>The UiTM Students e-Profile website is a modern platform that allows users to view and explore the academic and extracurricular profiles of UiTM students. Featuring a user-friendly interface, it includes a secure login, a list of student profiles with detailed information, and individual profile pages. The site is designed with a responsive layout using Bootstrap and offers a dark mode toggle for a customizable viewing experience. It provides an efficient way to showcase student achievements and information in a clean, accessible format.</p>
 
               <span class="badge text-bg-warning py-2 px-2"><i class="fa-solid fa-eye"></i> 43 Total Viewed </span>
               <span class="badge text-bg-success py-2 px-2"><i class="fa-solid fa-check"></i> 5 Students Registered</span>
-              <span class="badge text-bg-danger py-2 px-2"><i class="fa-solid fa-x"></i> 160,957 Students Not Registered</span>
+              <span class="badge text-bg-danger py-2 px-2"><i class="fa-solid fa-x"></i> 208000 UiTM Students</span>
             </div>
           </div>
         </div>
@@ -174,10 +174,10 @@
                   new Chart(chart2, {
                     type: 'line',
                     data: {
-                      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                      labels: ['2019', '2020', '2021', '2022', '2023', '2024'],
                       datasets: [{
-                        label: '# of Votes',
-                        data: [12, 19, 3, 5, 2, 3],
+                        label: 'Total UiTM Students',
+                        data: [176830, 183019, 189425, 196055, 202000,208000],
                         borderWidth: 1
                       }]
                     },
@@ -276,7 +276,8 @@
             <div class="overlay-header-content">
                 <span class="close-header-btn" onclick="closeOverlay('terms-of-service-overlay-header')">&times;</span>
                 <h2 class="overlay-header-title">Terms of Service</h2>
-                <p>By using this website, you agree to abide by the terms and conditions set forth by us...</p>
+                <!-- Embed the local privacy policy HTML file inside an iframe -->
+                <iframe src="termsofservice.html" class="overlay-iframe" frameborder="0"></iframe>
             </div>
         </div>
         
