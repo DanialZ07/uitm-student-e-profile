@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>UiTM STUDENT E-PROFILE</title>
+
+    <!-- Link to the favicon.png -->
+    <link rel="icon" href="img/uitm2.png" type="image/png">
+
+    <!-- bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+ 
+    <!-- google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- font awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- chartjs-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- style.css -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+
+      <!-- header -->
+<div class="container my-4">
+    <div class="uitm">UiTM STUDENT E-PROFILE</div>
+</div>
+      <!-- navigation -->
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container">
+          <img src="img/uitm2.png" alt="uitm2" width="30px" >
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-4 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="loprofile.html">List of Profiles</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="login.html">Logout</a>
+              </li>
+            </ul>
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="darkModeToggle" />
+              <lable class="form-check-label" for="darkModeToggle" id="themeLabel">Dark Mode
+              </lable>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!-- content -->
+      <div class="container">
+        <div class="row my-3">
+        </div>
+     </div>
+
+    <div class="container-fluid bg-body-tertiary">
+      <div class="container">
+        <div class="row py-5">
+          <div class="col-md-2 txt-center">
+<img src="img/uitm.png" alt="UiTM" width="200px" ?>
+            </div>
+            <div class="col-md-10">
+              <h3>HOMEPAGE</h3>
+              <h6>University Technology MARA</h6>
+              <p>The UiTM Students e-Profile website is a modern platform that allows users to view and explore the academic and extracurricular profiles of UiTM students. Featuring a user-friendly interface, it includes a secure login, a list of student profiles with detailed information, and individual profile pages. The site is designed with a responsive layout using Bootstrap and offers a dark mode toggle for a customizable viewing experience. It provides an efficient way to showcase student achievements and information in a clean, accessible format.</p>
+
+              <span class="badge text-bg-warning py-2 px-2"><i class="fa-solid fa-eye"></i> 43 Total Viewed </span>
+              <span class="badge text-bg-success py-2 px-2"><i class="fa-solid fa-check"></i> 5 Students Registered</span>
+              <span class="badge text-bg-danger py-2 px-2"><i class="fa-solid fa-x"></i> 160,957 Students Not Registered</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container mt-4">
+        <div class="row">
+          <div class="col-md-5">
+            <div class="card shadow bg-body-tertiary border-0">
+              <div class="card-body">
+                <div>
+                  <canvas id="chart1"></canvas>
+                  <script>
+                    const chart1 = document.getElementById('chart1');
+                  
+                    new Chart(chart1, {
+                      type: 'bar',
+                      data: {
+                        labels: ['January', 'February', 'March', 'April', 'June', 'July'],
+                        datasets: [{
+                          label: 'Viewers',
+                          data: [6, 6, 5, 7, 9, 8],
+                          backgroundColor: [
+                            'rgba(255, 159, 64, 0.2)',
+                            'rgba(255, 159, 64, 0.2)',
+                            'rgba(255, 159, 64, 0.2)',
+                            'rgba(255, 159, 64, 0.2)',
+                            'rgba(255, 159, 64, 0.2)',
+                            'rgba(255, 159, 64, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                          ],
+                          borderColor: [
+                            'rgb(255, 159, 64)',
+                            'rgb(255, 159, 64)',
+                            'rgb(255, 159, 64)',
+                            'rgb(255, 159, 64)',
+                            'rgb(255, 159, 64)',
+                            'rgb(255, 159, 64)',
+                            'rgb(255, 159, 64)'
+    ],
+                          borderWidth: 1
+                        }]
+                      },
+                      options: {
+                        scales: {
+                          y: {
+                            beginAtZero: true
+                          }
+                        }
+                      }
+                    });
+                  </script>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card shadow bg-body-tertiary border-0">
+              <div class="card-body">
+                <canvas id="chart3"></canvas>
+                <script>
+                  const chart3 = document.getElementById('chart3');
+                
+                  new Chart(chart3, {
+                    type: 'doughnut',
+                    data: {
+                      labels: ['January', 'February', 'March', 'April', 'June', 'July'],
+                      datasets: [{
+                        label: 'Students Registered',
+                        data: [1, 0, 2, 0, 0, 3],
+                        borderWidth: 1,
+                        stepped: true,
+                      }]
+                    },
+                    options: {
+                      scales: {
+                        y: {
+                          beginAtZero: true
+                        }
+                      }
+                    }
+                  });
+                </script>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card shadow bg-body-tertiary border-0">
+              <div class="card-body">
+                <canvas id="chart2"></canvas>
+                <script>
+                  const chart2 = document.getElementById('chart2');
+                
+                  new Chart(chart2, {
+                    type: 'line',
+                    data: {
+                      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                      datasets: [{
+                        label: '# of Votes',
+                        data: [12, 19, 3, 5, 2, 3],
+                        borderWidth: 1
+                      }]
+                    },
+                    options: {
+                      scales: {
+                        y: {
+                          beginAtZero: true
+                        }
+                      }
+                    }
+                  });
+                </script>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid purple my-4">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-14">
+              <div class="card my-2 border 0 card_transparent">
+                <div class="title">
+                UITM DI HATIKU
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    
+      <!-- footer -->
+      <footer class="footer mt-auto py-3 bg-body-tertiary">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="uitm-center">UiTM LINKS</div>
+            </div>
+            <div class="col-md-3">
+              <div class="row">
+                <div class="col-1 box_small purple" id="facebook">
+                  <i class="fa-brands fa-square-facebook"></i>
+              </div>
+              <div class="col-1 box_small yellow" id="twitter">
+                 <i class="fa-brands fa-x-twitter"></i>
+              </div>
+              <div class="col-1 box_small purple" id="instagram">
+                  <i class="fa-brands fa-square-instagram"></i>
+              </div>
+              <div class="col-1 box_small yellow" id="linkedin">
+                  <i class="fa-brands fa-linkedin"></i>
+              </div>
+              <div class="col-1 box_small purple" id="youtube">
+                  <i class="fa-brands fa-square-youtube"></i>
+              </div>
+              <div class="col-1 box_small yellow" id="uitm">
+                <img src="img/uitm2.png" alt="uitm2" class="social-icon">
+            </div>
+          </div>
+      
+          <!-- JavaScript to handle redirection -->
+          <script>
+              document.getElementById("facebook").addEventListener("click", function() {
+                  window.open('https://www.facebook.com/universititeknologimaramalaysia/?locale=ms_MY', '_blank');
+              });
+              document.getElementById("twitter").addEventListener("click", function() {
+                  window.open('https://x.com/uitmofficial', '_blank');
+              });
+              document.getElementById("instagram").addEventListener("click", function() {
+                  window.open('https://www.instagram.com/uitm.official/?hl=en', '_blank');
+              });
+              document.getElementById("linkedin").addEventListener("click", function() {
+                  window.open('https://my.linkedin.com/school/universiti-teknologi-mara/', '_blank');
+              });
+              document.getElementById("youtube").addEventListener("click", function() {
+                  window.open('https://www.youtube.com/c/UiTMChannel', '_blank');
+              });
+              document.getElementById("uitm").addEventListener("click", function() {
+                  window.open('https://uitm.edu.my/index.php/en/', '_blank');
+              });
+          </script>
+
+          <!-- Privacy Policy, Terms of Service, Contact Us -->
+          <div class="overlay-header" id="privacy-policy-overlay-header">
+            <div class="overlay-header-content">
+                <span class="close-header-btn" onclick="closeOverlay('privacy-policy-overlay-header')">&times;</span>
+                <h2 class="overlay-header-title">Privacy Policy</h2>
+                <!-- Embed the local privacy policy HTML file inside an iframe -->
+                <iframe src="privacypolicy.html" class="overlay-iframe" frameborder="0"></iframe>
+            </div>
+        </div>
+        
+        <div class="overlay-header" id="terms-of-service-overlay-header">
+            <div class="overlay-header-content">
+                <span class="close-header-btn" onclick="closeOverlay('terms-of-service-overlay-header')">&times;</span>
+                <h2 class="overlay-header-title">Terms of Service</h2>
+                <p>By using this website, you agree to abide by the terms and conditions set forth by us...</p>
+            </div>
+        </div>
+        
+        <div class="overlay-header" id="contact-us-overlay-header">
+            <div class="overlay-header-content">
+                <span class="close-header-btn" onclick="closeOverlay('contact-us-overlay-header')">&times;</span>
+                <h2 class="overlay-header-title">Contact Us</h2>
+                <p>If you have any questions or concerns, please reach out to us:</p>
+                <p>Email: <a href="mailto:danialaiman976@gmail.com">danialaiman976@gmail.com</a></p>
+                <p>Phone: 0199272635</p>
+            </div>
+        </div>
+  </div>
+            <div class="col-md-5">
+              <div class="container">
+                  <p>&copy; 2025 Universiti Teknologi MARA (UiTM). All rights reserved.</p>
+                  <p>Developed by Danial Aiman</p>
+                  <p>
+                      <a href="#" class="text-header" onclick="openOverlay('privacy-policy-overlay-header')">Privacy Policy</a> | 
+                      <a href="#" class="text-header" onclick="openOverlay('terms-of-service-overlay-header')">Terms of Service</a> | 
+                      <a href="#" class="text-header" onclick="openOverlay('contact-us-overlay-header')">Contact Us</a>
+                  </p>
+              </div>
+          </div>
+          </div>
+        </div>
+      </div>
+<script>
+      // Open overlay function
+      function openOverlay(overlayId) {
+          document.getElementById(overlayId).style.display = 'flex';
+      }
+      
+      // Close overlay function
+      function closeOverlay(overlayId) {
+          document.getElementById(overlayId).style.display = 'none';
+      }
+</script>
+      <!-- bootstrap js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+ 
+      <!-- darkmode script -->
+      <script>
+        function setTheme(theme) {
+            document.documentElement.setAttribute("data-bs-theme", theme);
+            localStorage.setItem("theme", theme);
+            document.getElementById("themeLabel").innerText =
+                theme === "dark" ? "Dark Mode On" : "Dark Mode Off";
+        }
+    
+        document
+            .getElementById("darkModeToggle")
+            .addEventListener("change", function (event) {
+                if (event.target.checked) {
+                    setTheme("dark");
+                } else {
+                    setTheme("");
+                }
+            });
+    
+        window.onload = function () {
+            let savedTheme = localStorage.getItem("theme");
+    
+            // If no theme is saved, default to dark mode.
+            if (!savedTheme) {
+                savedTheme = "dark";
+                localStorage.setItem("theme", savedTheme);
+            }
+    
+            setTheme(savedTheme);
+    
+            if (savedTheme === "dark") {
+                document.getElementById("darkModeToggle").checked = true;
+            }
+        };
+    </script>
+  </body>
+</html>

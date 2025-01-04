@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>UiTM STUDENT E-PROFILE</title>
+
+    <!-- Link to the favicon.png -->
+    <link rel="icon" href="img/uitm2.png" type="image/png">
+
+    <!-- bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+ 
+    <!-- google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- font awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- chartjs-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- style.css -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+
+      <!-- header -->
+<div class="container my-4">
+    <div class="uitm">UiTM STUDENT E-PROFILE</div>
+</div>
+      <!-- navigation -->
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container">
+          <img src="img/uitm2.png" alt="uitm2" width="30px" >
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-4 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="loprofile.html">List of Profiles</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="login.html">Logout</a>
+              </li>
+            </ul>
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="darkModeToggle" />
+              <lable class="form-check-label" for="darkModeToggle" id="themeLabel">Dark Mode
+              </lable>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- content -->
+      <div class="container-fluid purple my-4">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-3">
+              <div class="card my-4 border 0 card_transparent">
+                <div class="card-body center icon-scale">
+                  <i class="fa-solid fa-user"></i>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card my-2 border 0 card_transparent">
+                <div class="card-body profile-title">
+                  <i class="fa-solid fa-user"></i> E-STUDENT PROFILE <i class="fa-solid fa-user"></i>
+                </div>
+              </div>
+            </div>            
+            <div class="col-md-3">
+              <div class="card my-4 border 0 card_transparent">
+                <div class="card-body center icon-scale">
+                  <i class="fa-solid fa-user"></i>
+                </div>
+              </div>
+            </div>            
+          </div>
+        </div>
+      </div>
+
+<!-- Container for content -->
+<div class="container my-5">
+    <h1 class="text-center"> SEARCH</h1>
+
+    <!-- Search box -->
+    <div class="search-box mb-3">
+        <input type="text" id="searchInput" class="form-control" placeholder="Search by name..." onkeyup="filterStudents()">
+    </div>
+
+    <!-- Filters (Alphabetical) -->
+    <div class="filters mb-3">
+        <label for="alphabeticalFilter">Sort Alphabetically:</label>
+        <select id="alphabeticalFilter" class="form-control mb-2" onchange="filterStudents()">
+            <option value="asc">A-Z</option>
+            <option value="desc">Z-A</option>
+        </select>
+    </div>
+
+    <!-- Student list -->
+    <div id="student-list" class="student-list">
+        <!-- Student 1 -->
+        <div class="student-card" data-name="Danial Aiman Bin Mahmood ZUhdi" onclick="showOverlay('Danial Aiman Bin Mahmood ZUhdi', 'profile.jpg', '2024794957', 'Semester 4', 'Information Management System', 'Full-time', 'UiTM Selangor', '2002-10-07', '0123456789', 'danialaiman543@email.com')">
+            <div class="student-image-container">
+                <img src="img/profile.jpg" alt="Student 1" class="student-image">
+            </div>
+            <div class="student-name">Danial Aiman Bin Mahmood Zuhdi</div>
+        </div>
+
+        <!-- Student 2 -->
+        <div class="student-card" data-name="Nur Irdina Binti Nor Helmi" onclick="showOverlay('Nur Irdina Binti Nor Helmi', 'profile2.jpg', '2024544627', 'Semester 3', 'Business Administration', 'Part-time', 'UiTM Sarawak', '2002-05-15', '0198765432', 'kinta21@email.com')">
+            <div class="student-image-container">
+                <img src="img/profile2.jpg" alt="Student 2" class="student-image">
+            </div>
+            <div class="student-name">Nur Irdina Binti Nor Helmi</div>
+        </div>
+
+        <!-- Student 3 -->
+        <div class="student-card" data-name="Muhammad Arif Shamil Bin Ariffin" onclick="showOverlay('Muhammad Arif Shamil Bin Ariffin', 'profile3.jpg', '2024939193', 'Semester 3', 'Software Engineering', 'Full-time', 'UiTM Sabah', '2001-08-20', '0134567890', 'emilyj@email.com')">
+            <div class="student-image-container">
+                <img src="img/profile3.jpg" alt="Student 3" class="student-image">
+            </div>
+            <div class="student-name">Muhammad Arif Shamil Bin Ariffin</div>
+        </div>
+
+        <!-- Student 4 -->
+        <div class="student-card" data-name="Faridah Hazwani Binti Abdul Aziz" onclick="showOverlay('Faridah Hazwani Binti Abdul Aziz', 'profile4.png', '2024554263', 'Semester 4', 'Graphic Design', 'Part-time', 'UiTM Johor', '1998-02-25', '0145678901', 'michaelb@email.com')">
+            <div class="student-image-container">
+                <img src="img/profile4.png" alt="Student 4" class="student-image">
+            </div>
+            <div class="student-name">Faridah Hazwani Binti Abdul Aziz</div>
+        </div>
+
+        <!-- Student 5 -->
+        <div class="student-card" data-name="Nur Itmiknan Husna Binti Jefri" onclick="showOverlay('Nur Itmiknan Husna Binti Jefri', 'profile5.jpg', '2024977541', 'Semester 5', 'Accounting', 'Full-time', 'UiTM Kedah', '2002-07-10', '0156789012', 'sarahlee@email.com')">
+            <div class="student-image-container">
+                <img src="img/profile5.jpg" alt="Student 5" class="student-image">
+            </div>
+            <div class="student-name">Nur Itmiknan Husna Binti Jefri</div>
+        </div>
+    </div>
+</div>
+
+<!-- Overlay -->
+<div id="overlay" class="overlay">
+    <div class="overlay-content">
+        <span class="close-btn" onclick="closeOverlay()">&times;</span>
+        <div class="overlay-inner">
+            <div class="overlay-image-container">
+                <img id="overlay-image" src="" alt="Student Image" class="img-fluid">
+            </div>
+            <div class="overlay-info">
+                <form>
+                    <div class="mb-3">
+                        <label for="student-name" class="form-label">Name</label>
+                        <input type="text" id="student-name" class="form-control" disabled>
+                    </div>
+                    <div class="mb-3">
+                        <label for="matrix-number" class="form-label">Matrix Number</label>
+                        <input type="text" id="matrix-number" class="form-control" disabled>
+                    </div>
+                    <div class="mb-3">
+                        <label for="semester" class="form-label">Semester</label>
+                        <input type="text" id="semester" class="form-control" disabled>
+                    </div>
+                    <div class="mb-3">
+                        <label for="programme" class="form-label">Code and Programme Name</label>
+                        <input type="text" id="programme" class="form-control" disabled>
+                    </div>
+                    <div class="mb-3">
+                        <label for="study-mode" class="form-label">Mode of Study</label>
+                        <input type="text" id="study-mode" class="form-control" disabled>
+                    </div>
+                    <div class="mb-3">
+                        <label for="campus" class="form-label">Campus</label>
+                        <input type="text" id="campus" class="form-control" disabled>
+                    </div>
+                    <div class="mb-3">
+                        <label for="dob" class="form-label">Date of Birth</label>
+                        <input type="date" id="dob" class="form-control" disabled>
+                    </div>
+                    <div class="mb-3">
+                        <label for="contact-number" class="form-label">Contact Number</label>
+                        <input type="text" id="contact-number" class="form-control" disabled>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" id="email" class="form-control" disabled>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Custom JavaScript -->
+<script>
+  // Filter and sort students by name
+  function filterStudents() {
+      const alphabeticalFilter = document.getElementById('alphabeticalFilter').value;
+      const searchInput = document.getElementById('searchInput').value.toLowerCase();
+
+      const students = Array.from(document.querySelectorAll('.student-card'));
+
+      // Filter students based on the search input
+      students.forEach((card) => {
+          const name = card.getAttribute('data-name').toLowerCase();
+          if (searchInput === "" || name.includes(searchInput)) {
+              card.style.display = ""; // Show card
+          } else {
+              card.style.display = "none"; // Hide card
+          }
+      });
+
+      // Sort students alphabetically
+      if (alphabeticalFilter) {
+          const visibleStudents = students.filter((card) => card.style.display === "");
+          visibleStudents.sort((a, b) => {
+              if (alphabeticalFilter === "asc") {
+                  return a.getAttribute('data-name').localeCompare(b.getAttribute('data-name'));
+              } else {
+                  return b.getAttribute('data-name').localeCompare(a.getAttribute('data-name'));
+              }
+          });
+
+          // Reorder the visible students in the DOM
+          const studentList = document.getElementById('student-list');
+          visibleStudents.forEach((card) => {
+              studentList.appendChild(card);
+          });
+      }
+  }
+
+  // Show overlay with student details
+  function showOverlay(name, image, matrix, semester, programme, studyMode, campus, dob, contact, email) {
+      document.getElementById('student-name').value = name;
+      document.getElementById('matrix-number').value = matrix;
+      document.getElementById('semester').value = semester;
+      document.getElementById('programme').value = programme;
+      document.getElementById('study-mode').value = studyMode;
+      document.getElementById('campus').value = campus;
+      document.getElementById('dob').value = dob;
+      document.getElementById('contact-number').value = contact;
+      document.getElementById('email').value = email;
+      document.getElementById('overlay-image').src = 'img/' + image;
+      document.getElementById('overlay').style.display = 'flex';
+  }
+
+  // Close overlay
+  function closeOverlay() {
+      document.getElementById('overlay').style.display = 'none';
+  }
+</script>
+
+      <!-- footer -->
+      <footer class="footer mt-auto py-3 bg-body-tertiary">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="uitm-center">UiTM LINKS</div>
+            </div>
+            <div class="col-md-3">
+              <div class="row">
+                <div class="col-1 box_small purple" id="facebook">
+                  <i class="fa-brands fa-square-facebook"></i>
+              </div>
+              <div class="col-1 box_small yellow" id="twitter">
+                 <i class="fa-brands fa-x-twitter"></i>
+              </div>
+              <div class="col-1 box_small purple" id="instagram">
+                  <i class="fa-brands fa-square-instagram"></i>
+              </div>
+              <div class="col-1 box_small yellow" id="linkedin">
+                  <i class="fa-brands fa-linkedin"></i>
+              </div>
+              <div class="col-1 box_small purple" id="youtube">
+                  <i class="fa-brands fa-square-youtube"></i>
+              </div>
+              <div class="col-1 box_small yellow" id="uitm">
+                <img src="img/uitm2.png" alt="uitm2" class="social-icon">
+            </div>
+          </div>
+      
+          <!-- JavaScript to handle redirection -->
+          <script>
+              document.getElementById("facebook").addEventListener("click", function() {
+                  window.open('https://www.facebook.com/universititeknologimaramalaysia/?locale=ms_MY', '_blank');
+              });
+              document.getElementById("twitter").addEventListener("click", function() {
+                  window.open('https://x.com/uitmofficial', '_blank');
+              });
+              document.getElementById("instagram").addEventListener("click", function() {
+                  window.open('https://www.instagram.com/uitm.official/?hl=en', '_blank');
+              });
+              document.getElementById("linkedin").addEventListener("click", function() {
+                  window.open('https://my.linkedin.com/school/universiti-teknologi-mara/', '_blank');
+              });
+              document.getElementById("youtube").addEventListener("click", function() {
+                  window.open('https://www.youtube.com/c/UiTMChannel', '_blank');
+              });
+              document.getElementById("uitm").addEventListener("click", function() {
+                  window.open('https://uitm.edu.my/index.php/en/', '_blank');
+              });
+          </script>
+
+          <!-- Privacy Policy, Terms of Service, Contact Us -->
+          <div class="overlay-header" id="privacy-policy-overlay-header">
+            <div class="overlay-header-content">
+                <span class="close-header-btn" onclick="closeOverlay('privacy-policy-overlay-header')">&times;</span>
+                <h2 class="overlay-header-title">Privacy Policy</h2>
+                <!-- Embed the local privacy policy HTML file inside an iframe -->
+                <iframe src="privacypolicy.html" class="overlay-iframe" frameborder="0"></iframe>
+            </div>
+        </div>
+        
+        <div class="overlay-header" id="terms-of-service-overlay-header">
+            <div class="overlay-header-content">
+                <span class="close-header-btn" onclick="closeOverlay('terms-of-service-overlay-header')">&times;</span>
+                <h2 class="overlay-header-title">Terms of Service</h2>
+                <p>By using this website, you agree to abide by the terms and conditions set forth by us...</p>
+            </div>
+        </div>
+        
+        <div class="overlay-header" id="contact-us-overlay-header">
+            <div class="overlay-header-content">
+                <span class="close-header-btn" onclick="closeOverlay('contact-us-overlay-header')">&times;</span>
+                <h2 class="overlay-header-title">Contact Us</h2>
+                <p>If you have any questions or concerns, please reach out to us:</p>
+                <p>Email: <a href="mailto:danialaiman976@gmail.com">danialaiman976@gmail.com</a></p>
+                <p>Phone: 0199272635</p>
+            </div>
+        </div>
+  </div>
+            <div class="col-md-5">
+              <div class="container">
+                  <p>&copy; 2025 Universiti Teknologi MARA (UiTM). All rights reserved.</p>
+                  <p>Developed by Danial Aiman</p>
+                  <p>
+                      <a href="#" class="text-header" onclick="openOverlay('privacy-policy-overlay-header')">Privacy Policy</a> | 
+                      <a href="#" class="text-header" onclick="openOverlay('terms-of-service-overlay-header')">Terms of Service</a> | 
+                      <a href="#" class="text-header" onclick="openOverlay('contact-us-overlay-header')">Contact Us</a>
+                  </p>
+              </div>
+          </div>
+          </div>
+        </div>
+      </div>
+<script>
+      // Open overlay function
+      function openOverlay(overlayId) {
+          document.getElementById(overlayId).style.display = 'flex';
+      }
+      
+      // Close overlay function
+      function closeOverlay(overlayId) {
+          document.getElementById(overlayId).style.display = 'none';
+      }
+</script>
+      <!-- bootstrap js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+ 
+      <!-- darkmode script -->
+      <script>
+        function setTheme(theme) {
+            document.documentElement.setAttribute("data-bs-theme", theme);
+            localStorage.setItem("theme", theme);
+            document.getElementById("themeLabel").innerText =
+                theme === "dark" ? "Dark Mode On" : "Dark Mode Off";
+        }
+    
+        document
+            .getElementById("darkModeToggle")
+            .addEventListener("change", function (event) {
+                if (event.target.checked) {
+                    setTheme("dark");
+                } else {
+                    setTheme("");
+                }
+            });
+    
+        window.onload = function () {
+            let savedTheme = localStorage.getItem("theme");
+    
+            // If no theme is saved, default to dark mode.
+            if (!savedTheme) {
+                savedTheme = "dark";
+                localStorage.setItem("theme", savedTheme);
+            }
+    
+            setTheme(savedTheme);
+    
+            if (savedTheme === "dark") {
+                document.getElementById("darkModeToggle").checked = true;
+            }
+        };
+    </script>
+  </body>
+</html>
