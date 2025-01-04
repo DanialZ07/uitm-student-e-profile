@@ -259,10 +259,32 @@
       document.getElementById('overlay').style.display = 'flex';
   }
 
-  // Close overlay
-  function closeOverlay() {
-      document.getElementById('overlay').style.display = 'none';
-  }
+  document.addEventListener("DOMContentLoaded", function () {
+    const overlay = document.querySelector(".overlay");
+    const closeButton = document.querySelector(".close-btn");
+    const studentCards = document.querySelectorAll(".student-card");
+
+    // Open overlay
+    studentCards.forEach(card => {
+        card.addEventListener("click", function () {
+            overlay.style.display = "flex";
+        });
+    });
+
+    // Close overlay
+    if (closeButton) {
+        closeButton.addEventListener("click", function () {
+            overlay.style.display = "none";
+        });
+    }
+
+    // Close overlay by clicking outside of content
+    overlay.addEventListener("click", function (event) {
+        if (event.target === overlay) {
+            overlay.style.display = "none";
+        }
+    });
+});
 </script>
 
       <!-- footer -->
