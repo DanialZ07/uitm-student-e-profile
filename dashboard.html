@@ -1,11 +1,10 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>UiTM STUDENT E-PROFILE</title>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    
     <!-- Link to the favicon.png -->
     <link rel="icon" href="img/uitm2.png" type="image/png">
 
@@ -20,66 +19,198 @@
     <!-- font awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <!-- chartjs-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <!-- style.css -->
     <link rel="stylesheet" href="css/style.css" />
-</head>
+  </head>
+  <body>
 
-<body class="d-flex flex-column min-vh-100">
-
-    <!-- header -->
-    <div class="container my-2">
-        <div class="uitm">UiTM STUDENT E-PROFILE</div>
-    </div>
-
-    <!-- navigation -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container">
-            <img src="img/uitm2.png" alt="uitm2" width="30px">
-            <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" id="darkModeToggle" />
-                <label class="form-check-label" for="darkModeToggle" id="themeLabel">Dark Mode</label>
-            </div>
-        </div>
-    </nav>
-
-<!-- Login -->
-<div class="container d-flex justify-content-center align-items-center flex-grow-1">
-    <div class="card p-4 shadow-sm login-card w-50">
-        <div class="card-header">
-            <h4>Login</h4>
-        </div>
-        <div class="card-body">
-            <form id="loginForm" onsubmit="redirectToIndex(event)">
-                <div class="mb-3">
-                    <label for="username" class="form-label">Username</label>
-                    <input type="text" class="form-control" id="username" placeholder="Enter username" required>
-                    <div class="invalid-feedback">Please enter your username.</div>
-                </div>
-                <div class="mb-3">
-                    <label for="password" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="password" placeholder="Enter password" required>
-                    <div class="invalid-feedback">Please enter your password.</div>
-                </div>
-                <div class="mb-3 text-center">
-                    <button type="submit" class="btn btn-primary w-100">Login</button>
-                </div>
-                <div class="text-center">
-                    <small><a href="#">Forgot Password?</a></small>
-                </div>
-            </form>
-        </div>
-    </div>
+      <!-- header -->
+<div class="container my-4">
+    <div class="uitm">UiTM STUDENT E-PROFILE</div>
 </div>
+      <!-- navigation -->
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container">
+          <img src="img/uitm2.png" alt="uitm2" width="30px" >
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-4 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="loprofile.html">List of Profiles</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="login.html">Logout</a>
+              </li>
+            </ul>
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="darkModeToggle" />
+              <lable class="form-check-label" for="darkModeToggle" id="themeLabel">Dark Mode
+              </lable>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!-- content -->
+      <div class="container">
+        <div class="row my-3">
+        </div>
+     </div>
 
-    <!-- JavaScript to handle login and redirection -->
-<script>
-    function redirectToIndex(event) {
-        event.preventDefault(); // Prevent form submission
-        // Here you can add any validation or login logic if needed
-        window.location.href = "index.html"; // Redirect to index.html
-    }
-</script>
+    <div class="container-fluid bg-body-tertiary">
+      <div class="container">
+        <div class="row py-5">
+          <div class="col-md-2 txt-center">
+<img src="img/uitm.png" alt="UiTM" width="200px" ?>
+            </div>
+            <div class="col-md-10">
+              <h3>HOMEPAGE</h3>
+              <h6>University Technology MARA</h6>
+              <p>The UiTM Students e-Profile website is a modern platform that allows users to view and explore the academic and extracurricular profiles of UiTM students. Featuring a user-friendly interface, it includes a secure login, a list of student profiles with detailed information, and individual profile pages. The site is designed with a responsive layout using Bootstrap and offers a dark mode toggle for a customizable viewing experience. It provides an efficient way to showcase student achievements and information in a clean, accessible format.</p>
 
+              <span class="badge text-bg-warning py-2 px-2"><i class="fa-solid fa-eye"></i> 43 Total Viewed </span>
+              <span class="badge text-bg-success py-2 px-2"><i class="fa-solid fa-check"></i> 5 Students Registered</span>
+              <span class="badge text-bg-danger py-2 px-2"><i class="fa-solid fa-x"></i> 160,957 Students Not Registered</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container mt-4">
+        <div class="row">
+          <div class="col-md-5">
+            <div class="card shadow bg-body-tertiary border-0">
+              <div class="card-body">
+                <div>
+                  <canvas id="chart1"></canvas>
+                  <script>
+                    const chart1 = document.getElementById('chart1');
+                  
+                    new Chart(chart1, {
+                      type: 'bar',
+                      data: {
+                        labels: ['January', 'February', 'March', 'April', 'June', 'July'],
+                        datasets: [{
+                          label: 'Viewers',
+                          data: [6, 6, 5, 7, 9, 8],
+                          backgroundColor: [
+                            'rgba(255, 159, 64, 0.2)',
+                            'rgba(255, 159, 64, 0.2)',
+                            'rgba(255, 159, 64, 0.2)',
+                            'rgba(255, 159, 64, 0.2)',
+                            'rgba(255, 159, 64, 0.2)',
+                            'rgba(255, 159, 64, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                          ],
+                          borderColor: [
+                            'rgb(255, 159, 64)',
+                            'rgb(255, 159, 64)',
+                            'rgb(255, 159, 64)',
+                            'rgb(255, 159, 64)',
+                            'rgb(255, 159, 64)',
+                            'rgb(255, 159, 64)',
+                            'rgb(255, 159, 64)'
+    ],
+                          borderWidth: 1
+                        }]
+                      },
+                      options: {
+                        scales: {
+                          y: {
+                            beginAtZero: true
+                          }
+                        }
+                      }
+                    });
+                  </script>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card shadow bg-body-tertiary border-0">
+              <div class="card-body">
+                <canvas id="chart3"></canvas>
+                <script>
+                  const chart3 = document.getElementById('chart3');
+                
+                  new Chart(chart3, {
+                    type: 'doughnut',
+                    data: {
+                      labels: ['January', 'February', 'March', 'April', 'June', 'July'],
+                      datasets: [{
+                        label: 'Students Registered',
+                        data: [1, 0, 2, 0, 0, 3],
+                        borderWidth: 1,
+                        stepped: true,
+                      }]
+                    },
+                    options: {
+                      scales: {
+                        y: {
+                          beginAtZero: true
+                        }
+                      }
+                    }
+                  });
+                </script>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card shadow bg-body-tertiary border-0">
+              <div class="card-body">
+                <canvas id="chart2"></canvas>
+                <script>
+                  const chart2 = document.getElementById('chart2');
+                
+                  new Chart(chart2, {
+                    type: 'line',
+                    data: {
+                      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                      datasets: [{
+                        label: '# of Votes',
+                        data: [12, 19, 3, 5, 2, 3],
+                        borderWidth: 1
+                      }]
+                    },
+                    options: {
+                      scales: {
+                        y: {
+                          beginAtZero: true
+                        }
+                      }
+                    }
+                  });
+                </script>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid purple my-4">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-14">
+              <div class="card my-2 border 0 card_transparent">
+                <div class="title">
+                UITM DI HATIKU
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    
       <!-- footer -->
       <footer class="footer mt-auto py-3 bg-body-tertiary">
         <div class="container">
@@ -222,7 +353,5 @@
             }
         };
     </script>
-
-</body>
-
+  </body>
 </html>
